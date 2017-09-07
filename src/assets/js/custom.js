@@ -29,14 +29,14 @@
         let template = ``;
         Users.forEach(user => {
             template += `<li class="list-group-item" data-user-id="${user.id}">
-            ${user.id} - ${user.firstName} ${user.lastName} 
+            ${user.firstName} ${user.lastName} 
             <div class="list-actions">
                 <button class="btn btn-danger" data-action="delete">Delete</button>
                 <button class="btn btn-info" data-action="edit">Edit</button> 
             </div>
 </li>`;
-           
-        });
+
+    });
         $usersWrapper.find('ul.list-group').append(template);
     }
 
@@ -47,7 +47,7 @@
         }
         $usersWrapper.find('ul.list-group').append(
             `<li class="list-group-item" data-user-id="${user.id}">
-            ${user.id} - ${user.fullName}
+            ${user.fullName}
             <div class="list-actions">
                 <button class="btn btn-danger" data-action="delete">Delete</button>
                 <button class="btn btn-info" data-action="edit">Edit</button>
@@ -73,13 +73,13 @@
         let template = ``;
         Groups.forEach(group => {
             template += `<li class="list-group-item" data-group-id="${group.id}">
-            ${group.id} - ${group.groupName}
+            ${group.groupName}
                 <div class="list-actions">
                     <button class="btn btn-danger" data-action="delete">Delete</button>
                     <button class="btn btn-info"  data-action="edit">Edit</button>
                 </div>
             </li>`
-        });
+    });
         $groupsWrapper.find('ul.list-group').append(template);
     }
 
@@ -90,7 +90,7 @@
         }
         $groupsWrapper.find('ul.list-group').append(
             `<li class="list-group-item" data-group-id="${group.id}">
-            ${group.id} - ${group.groupName}
+           ${group.groupName}
             <div class="list-actions">
                 <button class="btn btn-danger" data-action="delete">Delete</button>
                 <button class="btn btn-info" data-action="edit" data-toggle="modal" data-target="#editModal">Edit</button>
@@ -119,10 +119,10 @@
             }
             groups.forEach((group, index) => {
                 if (group.id === grId.toString()) {
-                    groups.splice(index, 1);
-                    return false;
-                }
-            });
+                groups.splice(index, 1);
+                return false;
+            }
+        });
             localStorage.setItem('taskGroups', JSON.stringify(groups));
             $(this).closest('li').fadeOut(function () {
                 $(this).remove();
@@ -132,16 +132,16 @@
         //  edit action
         $groupsWrapper.find('[data-action="edit"]').on('click', function () {
             // Do something with edit
-             let grId = $(this).closest('li').data('group-id');
-             let groups = JSON.parse(localStorage.getItem('taskGroups'));
-             groups.forEach((group, index) => {
-                 if (group.id === grId) {
-                     
-                     groups.splice(index, 1);
-                    localStorage.setItem('taskGroups', JSON.stringify(groups));
-                     return false;
-                }
-             })
+            let grId = $(this).closest('li').data('group-id');
+            let groups = JSON.parse(localStorage.getItem('taskGroups'));
+            groups.forEach((group, index) => {
+                if (group.id === grId) {
+
+                groups.splice(index, 1);
+                localStorage.setItem('taskGroups', JSON.stringify(groups));
+                return false;
+            }
+        })
         });
     }
 
@@ -154,10 +154,10 @@
             let users = JSON.parse(localStorage.getItem('taskUsers'));
             users.forEach((user, index) => {
                 if (user.id === userId.toString()) {
-                    users.splice(index, 1);
-                    return false;
-                }
-            });
+                users.splice(index, 1);
+                return false;
+            }
+        });
             localStorage.setItem('taskUsers', JSON.stringify(users));
             $(this).closest('li').fadeOut(function () {
                 $(this).remove();
@@ -188,9 +188,9 @@
         });
         // form validation
         $.validator.addMethod("checkUserFullName", function (value, element, regexp) {
-            let re = new RegExp(regexp);
-            return this.optional(element) || re.test(value);
-        },
+                let re = new RegExp(regexp);
+                return this.optional(element) || re.test(value);
+            },
             "Only characters are allowed."
         );
         $.validator.addMethod("user_email", function (value, element) {
@@ -200,47 +200,47 @@
             return this.optional(element) || (re.test(value) && (newVal[0].indexOf(reg) < 0));
         }, "Please enter a valid email address.");
         $form.validate({
-            ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
-            focusInvalid: false,
-            errorPlacement: (error, element) => {
+                ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
+                focusInvalid: false,
+                errorPlacement: (error, element) => {
                 error.appendTo(element.parent().after());
-            },
-            onfocusout: (element) => {
-                if ($(element).valid()) {
-                    if ($(element).parent().hasClass('selectize-input')) {
-                        $(element).parent().parent().next('label.error').remove();
-                    }
-                }
-            },
-            highlight: (element) => {
-                if ($(element).hasClass('selectized')) {
-                    $(element).siblings('.selectize-control').find('.selectize-input').addClass('isnotvalid');
-                } else {
-                    $(element).addClass('isnotvalid');
-                }
-            },
-            unhighlight: (element) => {
-                $(element).removeClass('isnotvalid');
-                $(element).parent().removeClass('isnotvalid');
-            },
-            rules: {
-                'first-name': {
-                    required: true,
-                    checkUserFullName: "^[a-zA-Z' ]+$"
-                },
-                'last-name': {
-                    required: true,
-                    checkUserFullName: "^[a-zA-Z' ]+$"
-                },
-                'email': {
-                    required: true,
-                    user_email: true
-                },
-                'groups': {
-                    required: true
+    },
+        onfocusout: (element) => {
+            if ($(element).valid()) {
+                if ($(element).parent().hasClass('selectize-input')) {
+                    $(element).parent().parent().next('label.error').remove();
                 }
             }
-        });
+        },
+        highlight: (element) => {
+            if ($(element).hasClass('selectized')) {
+                $(element).siblings('.selectize-control').find('.selectize-input').addClass('isnotvalid');
+            } else {
+                $(element).addClass('isnotvalid');
+            }
+        },
+        unhighlight: (element) => {
+            $(element).removeClass('isnotvalid');
+            $(element).parent().removeClass('isnotvalid');
+        },
+        rules: {
+            'first-name': {
+                required: true,
+                    checkUserFullName: "^[a-zA-Z' ]+$"
+            },
+            'last-name': {
+                required: true,
+                    checkUserFullName: "^[a-zA-Z' ]+$"
+            },
+            'email': {
+                required: true,
+                    user_email: true
+            },
+            'groups': {
+                required: true
+            }
+        }
+    });
 
         // detect form submit and simulate a real life example
         $form.on('submit', function (e) {
@@ -266,34 +266,34 @@
     function handleGroupCreation() {
         let $form = $createGroupWrapper.find('form');
         $form.validate({
-            focusInvalid: false,
-            errorPlacement: (error, element) => {
+                focusInvalid: false,
+                errorPlacement: (error, element) => {
                 error.appendTo(element.parent().after());
-            },
-            onfocusout: (element) => {
-                if ($(element).valid()) {
-                    if ($(element).parent().hasClass('selectize-input')) {
-                        $(element).parent().parent().next('label.error').remove();
-                    }
-                }
-            },
-            highlight: (element) => {
-                if ($(element).hasClass('selectized')) {
-                    $(element).siblings('.selectize-control').find('.selectize-input').addClass('isnotvalid');
-                } else {
-                    $(element).addClass('isnotvalid');
-                }
-            },
-            unhighlight: (element) => {
-                $(element).removeClass('isnotvalid');
-                $(element).parent().removeClass('isnotvalid');
-            },
-            rules: {
-                'group-name': {
-                    required: true,
+    },
+        onfocusout: (element) => {
+            if ($(element).valid()) {
+                if ($(element).parent().hasClass('selectize-input')) {
+                    $(element).parent().parent().next('label.error').remove();
                 }
             }
-        });
+        },
+        highlight: (element) => {
+            if ($(element).hasClass('selectized')) {
+                $(element).siblings('.selectize-control').find('.selectize-input').addClass('isnotvalid');
+            } else {
+                $(element).addClass('isnotvalid');
+            }
+        },
+        unhighlight: (element) => {
+            $(element).removeClass('isnotvalid');
+            $(element).parent().removeClass('isnotvalid');
+        },
+        rules: {
+            'group-name': {
+                required: true,
+            }
+        }
+    });
 
         // detect form submit and simulate a real life example
         $form.on('submit', function (e) {
