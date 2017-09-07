@@ -1,8 +1,6 @@
-# Project Title
+# InterNations
 
-Simple boilerplate project
-
-This projevt uses Bootstrap & Jquery by default loaded using cdn
+This project uses Bootstrap & Jquery by default loaded using cdn
 
 ## Getting Started
 
