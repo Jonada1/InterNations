@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Simple CMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link href="web/assets/css/custom.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="web/assets/css/icon-font.min.css" type='text/css' />
+    <!-- //lined-icons -->
+
+    <!--animate-->
+    <link href="web/assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
+
+    <!--//end-animate-->
+    <!----webfonts--->
+    <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!---//webfonts--->
+    <!-- Meters graphs -->
+
+</head>
+
+<body class="sticky-header left-side-collapsed">
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo end-->
+        <div class="left-side-inner">
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="index.html"><i class="fa fa-home"></i> </a></li>
+
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
+
+                <li><a href="#"><i class="fa fa-users"></i></a></li>
+
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content">
+        <!-- header-starts -->
+        <div class="header-section">
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <div class="user-panel-top">
+
+                    <div class="profile_details">
+                        <ul>
+                            <li class="dropdown profile_details_drop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile_img">
+                                        <div class="user-name">
+                                            <p>Jonada<span>Administrator</span></p>
+                                        </div>
+                                        <i class="lnr lnr-chevron-down"></i>
+                                        <i class="lnr lnr-chevron-up"></i>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu drp-mnu">
+                                    <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
+                                    <li> <a href="#"><i class="fa fa-user"></i>Profile</a> </li>
+                                    <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                </ul>
+                            </li>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!--notification menu end -->
+        </div>
+        <!-- //header-ends -->
+        <div id="page-wrapper">
+            <div class="graphs">
+                <div class="col-user">
+
+                    <div class="col-md-3">
+                        <div class="r3_counter_box">
+                            <i class="fa fa-user"></i>
+                            <div class="stats">
+                                <h5>50 <span>%</span></h5>
+                                <div class="grow grow1">
+                                    <p>Users</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 span_8">
+                        <div class="activity_box">
+                            <h3>Available Users</h3>
+                            <div class="scrollbar scrollbar1" id="style">
+                                <div class="activity-row">
+                                    <div class="users-list">
+
+                                        <ul class="list-group">
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user-creator">
+                            <h2>Add users</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" class="form-control" id="first-name" name="first-name" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="groups">Groups</label>
+                                    <input type="text" class="form-control" id="groups" name="groups" placeholder="Select groups">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Create user</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div class="clearfix"> </div>
+                </div>
+
+
+                <div class="col-group">
+                    <div class="col-md-3">
+                        <div class="r3_counter_box">
+                            <i class="fa fa-users"></i>
+                            <div class="stats">
+                                <h5>70 <span>%</span></h5>
+                                <div class="grow grow3">
+                                    <p>Groups</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 span_8">
+                        <div class="activity_box activity_box2">
+                            <h3>Available Groups</h3>
+                            <div class="scrollbar" id="style-2">
+                                <div class="activity-row activity-row1">
+                                    <div class="groups-list">
+
+                                        <ul class="list-group">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="group-creator">
+                            <h2>Add groups</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="group-name">Group Name</label>
+                                    <input type="text" class="form-control" id="group-name" name="group-name" placeholder="Group Name">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Create group</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+
+                </div>
+            </div>
+            <!--body wrapper start-->
+        </div>
+        <!--body wrapper end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js" defer integrity="sha256-HyBiZFJAMvxOhZoWOc5LWIWaN1gcFi8LjS75BZF4afg=" crossorigin="anonymous" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" defer></script>
+
+<script src="web/assets/js/Group.js" defer></script>
+<script src="web/assets/js/User.js" defer></script>
+<script src="web/assets/js/custom.js" defer></script>
+</body>
+
+</html>
