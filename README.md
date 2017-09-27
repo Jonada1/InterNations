@@ -1,4 +1,4 @@
-# InterNations
+# Simple Cms
 
 This project uses Bootstrap & Jquery by default loaded using cdn
 
